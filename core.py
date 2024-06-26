@@ -15,3 +15,7 @@ from scipy.spatial.distance import cdist
 from matplotlib import pyplot as plt
 from matplotlib.pyplot import plot
 from sklearn.model_selection import train_test_split
+import warnings 
+warnings.filterwarnings("ignore")
+
+
