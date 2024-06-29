@@ -18,3 +18,9 @@ for column in data.columns:
 
 
 correlation_matrix = data.corr()
+#features
+X = data.drop('LUNG_CANCER', axis=1)
+#target variable
+y = data['LUNG_CANCER']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
