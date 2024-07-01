@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
-
+import matplotlib.pyplot as plt
 
 data = pd.read_csv("./dataset/slc.csv")
 
@@ -34,11 +34,22 @@ feature_importance = feature_importance.sort_values('importance', ascending=Fals
 lung_cancer_patients = data[data['LUNG_CANCER'] == 1]
 common_characteristics = lung_cancer_patients.mean().sort_values(ascending=False)
 
-print("Top 5 Correlated features with lung cancer:")
-print(correlation_matrix['LUNG_CANCER'].sort_values(ascending=False).head())
+# print("Top 5 Correlated features with lung cancer:")
+# print(correlation_matrix['LUNG_CANCER'].sort_values(ascending=False).head())
 
-print("/nTop 5 important features:")
-print(feature_importance.head())
+# print("/nTop 5 important features:")
+# print(feature_importance.head())
 
-print("/nCommon characteristics among Lung Cancer Patients:")
-print(common_characteristics)
+# print("/nCommon characteristics among Lung Cancer Patients:")
+# print(common_characteristics)
+
+
+#feature importances
+plt.figure(figsize=(12,6))
+plt.bar(feature_importance['feature'][:10], feature_importance['importance'][:10])
+plt.title('Top 10 important features for lung cancer prediction')
+plt.xlabel('Features')
+plt.ylabel('Importance')
+plt.xticks(rotation=45, ha='height')
+plt.tight_layout()
+plt.show()
