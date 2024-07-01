@@ -53,3 +53,13 @@ plt.ylabel('Importance')
 plt.xticks(rotation=45, ha='height')
 plt.tight_layout()
 plt.show()
+
+#common characteristics
+plt.figure(figsize=(12,6))
+plt.bar(common_characteristics.index[:10], common_characteristics.values[:10])
+plt.title('Top 10 common characteristics for lung cancer predicition')
+plt.xlabel('Characteristics')
+plt.ylabel('average value')
+plt.xticks(rotation=45, ha='height')
+plt.tight_layout()
+plt.show()
