@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder
 
 data = pd.read_csv("./dataset/slc.csv")
 
-print(data.dtypes)
+# print(data.dtypes)
 
 for column in data.columns: 
     if data[column].dtypes == 'object':
@@ -33,3 +33,12 @@ feature_importance = feature_importance.sort_values('importance', ascending=Fals
 
 lung_cancer_patients = data[data['LUNG_CANCER'] == 1]
 common_characteristics = lung_cancer_patients.mean().sort_values(ascending=False)
+
+print("Top 5 Correlated features with lung cancer:")
+print(correlation_matrix['LUNG_CANCER'].sort_values(ascending=False).head())
+
+print("/nTop 5 important features:")
+print(feature_importance.head())
+
+print("/nCommon characteristics among Lung Cancer Patients:")
+print(common_characteristics)
