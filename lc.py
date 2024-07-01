@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv("./dataset/slc.csv")
 
-# print(data.dtypes)
+print(data.dtypes)
 
 for column in data.columns: 
     if data[column].dtypes == 'object':
@@ -46,7 +46,7 @@ common_characteristics = lung_cancer_patients.mean().sort_values(ascending=False
 
 #feature importances
 plt.figure(figsize=(12,6))
-plt.bar(feature_importance['feature'][:10], feature_importance['importance'][:10])
+plt.bar(feature_importance['feature'], feature_importance['importance'])
 plt.title('Top 10 important features for lung cancer prediction')
 plt.xlabel('Features')
 plt.ylabel('Importance')
