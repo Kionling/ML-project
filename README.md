@@ -16,7 +16,7 @@ By analyzing a diverse set of health and lifestyle variables, this model aims to
 # Technologies and Libraries
 * Python
 * Matplotlib
-* Sklearn
+* Scikitlearn
 * pandas
 * Random Forest Method
 * Numpy
